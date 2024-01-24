@@ -20,10 +20,10 @@
             //                    | RIS | BKS | GUI |   | LOW | SPC  | ENT |
 
             bindings = <
-  &kp ESC  &kp Q  &kp W  &kp E     &kp R     &kp T    &kp Y      &kp U                    &kp I    &kp O     &kp P  &kp MINUS
-  &kp TAB  &kp A  &kp S  &kp D     &kp F     &kp G    &kp H      &kp J                    &kp K    &kp L  &kp SEMI    &kp SQT
-&kp LSHFT  &kp Z  &kp X  &kp C     &kp V     &kp B    &kp N      &kp M                &kp COMMA  &kp DOT  &kp FSLH   &kp RALT
-                         &mo 2  &kp BSPC  &kp LGUI    &mo 1  &kp SPACE  &mt RIGHT_CONTROL ENTER
+&kp ESC  &kp Q           &kp W               &kp E           &kp R             &kp T    &kp Y  &kp U              &kp I            &kp O        &kp P                    &kp MINUS
+&kp TAB  &mt LEFT_ALT A  &mt LEFT_CONTROL S  &mt LEFT_GUI D  &mt LEFT_SHIFT F  &kp G    &kp H  &mt RIGHT_SHIFT J  &mt RIGHT_GUI K  &mt RCTRL L  &mt RIGHT_ALT SEMICOLON  &kp SQT
+&none    &kp Z           &kp X               &kp C           &kp V             &kp B    &kp N  &kp M              &kp COMMA        &kp DOT      &kp FSLH                 &none
+                                             &mo 2           &kp BSPC          &none    &mo 1  &kp SPACE          &kp ENTER
             >;
         };
 
@@ -35,10 +35,10 @@
             //                    | FUN | DEL | GUI |   |     |     |     |
 
             bindings = <
-&kp EQUAL     &kp N1    &kp N2    &kp N3    &kp N4     &kp N5       &kp N6    &kp N7           &kp N8    &kp N9    &kp N0  &kp MINUS
-&kp LCTRL   &kp EXCL    &kp AT  &kp HASH  &kp DLLR  &kp PRCNT    &kp CARET  &kp AMPS  &kp KP_MULTIPLY  &kp LPAR  &kp RPAR      &none
-&kp LSHFT  &kp GRAVE  &kp BSLH     &none     &none      &none     &kp LBKT  &kp RBKT            &none     &none     &none      &none
-                                   &to 3   &kp DEL   &kp LGUI        &none     &none            &none
+&kp EQUAL  &kp N1     &kp N2    &kp N3    &kp N4    &kp N5       &kp N6     &kp N7    &kp N8           &kp N9    &kp N0    &kp MINUS
+&none      &kp EXCL   &kp AT    &kp HASH  &kp DLLR  &kp PRCNT    &kp CARET  &kp AMPS  &kp KP_MULTIPLY  &kp LPAR  &kp RPAR  &none
+&none      &kp GRAVE  &kp BSLH  &none     &none     &none        &kp LBKT   &kp RBKT  &none            &none     &none     &none
+                                &to 3     &kp DEL   &none        &none      &none     &none
             >;
         };
 
@@ -50,10 +50,10 @@
             //                      |      |      |      |   |       |       |      |
 
             bindings = <
-    &none    &kp F1  &kp F2  &kp F3  &kp F4  &kp F5      &kp F6     &kp F7     &kp F8     &kp F9   &kp F10    &kp F11
-&kp LCTRL     &none   &none   &none   &none   &none    &kp LEFT   &kp DOWN     &kp UP  &kp RIGHT     &none  &kp RCTRL
-&kp LSHFT  &kp LALT   &none   &none   &none   &none    &kp HOME  &kp PG_DN  &kp PG_UP    &kp END  &kp RALT  &kp RSHFT
-                              &none   &none   &none       &none      &none      &none
+&none  &kp F1  &kp F2  &kp F3  &kp F4  &kp F5    &kp F6    &kp F7     &kp F8     &kp F9     &kp F10  &kp F11
+&none  &none   &none   &none   &none   &none     &kp LEFT  &kp DOWN   &kp UP     &kp RIGHT  &none    &none
+&none  &none   &none   &none   &none   &none     &kp HOME  &kp PG_DN  &kp PG_UP  &kp END    &none    &none
+                       &none   &none   &none     &none     &none      &none
             >;
         };
 
@@ -65,10 +65,10 @@
             //                      |      |      |      |   |       |       |      |
 
             bindings = <
-&bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &none        &kp K_PP         &none       &none  &none  &none  &none
-  &bt BT_PRV    &bt BT_NXT         &none         &none         &none  &none      &kp C_PREV    &kp K_NEXT       &none  &none  &none  &none
-  &bt BT_CLR         &none         &none         &none         &none  &none    &kp C_VOL_UP  &kp C_VOL_DN  &kp K_MUTE  &none  &none  &none
-                                                 &none         &none  &none           &none         &none       &to 0
+&bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &none    &kp K_PP      &none         &none       &none  &none  &none
+&bt BT_PRV    &bt BT_NXT    &none         &none         &none         &none    &kp C_PREV    &kp K_NEXT    &none       &none  &none  &none
+&bt BT_CLR    &none         &none         &none         &none         &none    &kp C_VOL_UP  &kp C_VOL_DN  &kp K_MUTE  &none  &none  &none
+                                          &none         &none         &none    &none         &none         &to 0
             >;
         };
     };
