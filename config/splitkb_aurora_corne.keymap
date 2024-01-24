@@ -9,6 +9,35 @@
 #include <dt-bindings/zmk/keys.h>
 
 / {
+    behaviors {
+        lh_pht: left_positional_hold_tap {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "tap-unless-interrupted";
+            tapping-term-ms = <100>;                        // <---[[produces tap if held longer than tapping-term-ms]]
+            quick-tap-ms = <200>;
+            bindings = <&kp>, <&kp>;
+            hold-trigger-key-positions = <5 6 7 8 9 10>;    // <---[[right-hand keys]]
+        };
+
+        hm: homerow_mods {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            tapping-term-ms = <150>;
+            quick-tap-ms = <0>;
+            flavor = "tap-preferred";
+            bindings = <&kp>, <&kp>;
+        };
+
+        bhm: balanced_homerow_mods {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;    // <---[[moderate duration]]
+            quick-tap-ms = <0>;
+            flavor = "balanced";
+            bindings = <&kp>, <&kp>;
+        };
+    };
     keymap {
         compatible = "zmk,keymap";
 
@@ -21,7 +50,7 @@
 
             bindings = <
 &kp ESC  &kp Q           &kp W               &kp E           &kp R             &kp T    &kp Y  &kp U              &kp I            &kp O        &kp P                    &kp MINUS
-&kp TAB  &mt LEFT_ALT A  &mt LEFT_CONTROL S  &mt LEFT_GUI D  &mt LEFT_SHIFT F  &kp G    &kp H  &mt RIGHT_SHIFT J  &mt RIGHT_GUI K  &mt RCTRL L  &mt RIGHT_ALT SEMICOLON  &kp SQT
+&kp TAB  &hm LALT A      &hm LCTRL S         &hm LGUI D      &hm LSHIFT F      &kp G    &kp H  &hm RSHIFT J       &hm RGUI K       &hm RCTRL L  &hm RALT SEMICOLON       &kp SQT
 &none    &kp Z           &kp X               &kp C           &kp V             &kp B    &kp N  &kp M              &kp COMMA        &kp DOT      &kp FSLH                 &none
                                              &mo 2           &kp BSPC          &none    &mo 1  &kp SPACE          &kp ENTER
             >;
